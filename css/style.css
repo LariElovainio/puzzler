@@ -3,7 +3,7 @@ html {
 	--c-bg-shadow: oklch(92% 0.0001 300);
 	--c-bg-highlight: oklch(99% 0.005 30);
 	--c-text: oklch(40% .02 200);
-	--c-text-subtle: oklch(60% .02 200);
+	--c-text-subtle: oklch(75% .02 200);
 }
 
 body {
@@ -67,9 +67,12 @@ body {
 		0 1px 4px #0001,
 		0 2px 8px #0001;
 	color: inherit;
+	display: block;
 	grid-row-start: var(--row);
 	grid-column-start: var(--column);
-	font-size: 100%;
+	font-size: 85%;
+	font-weight: 500;
+	letter-spacing: -.05em;
 	padding: 0;
 	text-align: center;
 }
