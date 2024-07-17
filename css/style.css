@@ -1,6 +1,6 @@
 html {
 	--c-bg-page: oklch(94% 0.005 30);
-	--c-bg-shadow: oklch(92% 0.0001 300);
+	--c-bg-shadow: oklch(88% 0.0001 300);
 	--c-bg-highlight: oklch(99% 0.005 30);
 	--c-text: oklch(40% .02 200);
 	--c-text-subtle: oklch(75% .02 200);
@@ -15,7 +15,7 @@ body {
 }
 
 .app-name {
-	background: linear-gradient(to bottom, color(display-p3 0.613 0.605 0.552) 35%, color(display-p3 0.486 0.431 0.507));
+	background: linear-gradient(to bottom, #fff 0, color(display-p3 0.613 0.605 0.552) 38%, color(display-p3 0.486 0.431 0.507), #333 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	cursor: default;
@@ -41,6 +41,7 @@ body {
 	background: var(--c-bg-shadow);
 	border-radius: 7px;
 	box-shadow:
+		0 0 1px #fff9,
 		inset 0 0 1px #0001,
 		inset 0 1px 2px #0001,
 		inset 0 1px 4px #0001,
@@ -63,12 +64,12 @@ body {
 	aspect-ratio: 1 / 1;
 	background: var(--c-bg-highlight) linear-gradient(#0000, #0001);
 	border: none;
-	border-radius: 3px;
+	border-radius: 5px;
 	box-shadow:
 		inset 0 1px 1px #fff8,
 		inset 0 0 1px #0001,
-		0 1px 2px #0001,
-		0 1px 4px #0001,
+		0 1px 2px #0002,
+		0 1px 4px #0002,
 		0 2px 8px #0001;
 	color: inherit;
 	display: block;
