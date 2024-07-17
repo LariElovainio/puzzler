@@ -32,7 +32,8 @@ body {
 
 .board {
 	--size: 4;
-	--gap: 2px;
+	--total-count: calc( var(--size) * var(--size) );
+	--gap: .0625em;
 	align-content: center;
 	aspect-ratio: 1 / 1;
 	background: var(--c-bg-shadow);
@@ -62,6 +63,7 @@ body {
 	border: none;
 	border-radius: 3px;
 	box-shadow:
+		inset 0 1px 1px #fff8,
 		inset 0 0 1px #0001,
 		0 1px 2px #0001,
 		0 1px 4px #0001,
@@ -75,12 +77,77 @@ body {
 	letter-spacing: -.05em;
 	padding: 0;
 	text-align: center;
+	text-shadow: 0 1px 1px #fffc,
+				0 -1px 1px #0004;
+}
+
+.img-bg {
+	--bg-image: url("../img/board-bluey.webp");
+	color: black;
+}
+
+.img-bg .piece {
+	--img-y: calc( 100% / var(--size) * var(--y-m) + ( var(--y-m) - 1 ) * var(--gap) );
+	--img-x: calc( 100% / var(--size) * var(--x-m) + ( var(--x-m) - 1 ) * var(--gap) );
+	background-image: var(--bg-image);
+	background-size: calc( var(--size) * 100% + ( var(--size) - 1 ) * var(--gap) );
+	background-position-x: var(--img-x);
+	background-position-y: var(--img-y);
+}
+
+.img-bg .piece[data-goal-row="0"],
+.img-bg .piece[data-goal-row="1"] {
+	--y-m: 0;
+}
+
+.img-bg .piece[data-goal-column="0"],
+.img-bg .piece[data-goal-column="1"] {
+	--x-m: 0;
+}
+
+.img-bg .piece[data-goal-row="2"] {
+	--y-m: 1;
+}
+
+.img-bg .piece[data-goal-column="2"] {
+	--x-m: 1;
+}
+
+.img-bg .piece[data-goal-row="3"] {
+	--y-m: 2;
+}
+
+.img-bg .piece[data-goal-column="3"] {
+	--x-m: 2;
+}
+
+.img-bg .piece[data-goal-row="4"] {
+	--y-m: 4;
+}
+
+.img-bg .piece[data-goal-column="4"] {
+	--x-m: 4;
+}
+
+.color-bg {
+	--bg-color: oklch(75% .25 50);
+	color: black;
+}
+
+.color-bg .piece {
+	background-color: var(--bg-color);
+}
+
+.color-bg.rainbow .piece {
+	--hue: calc( var(--order) / var(--total-count) * 360 );
+	--bg-color: oklch( 75% .25 var(--hue));
 }
 
 .piece.empty {
-	background: transparent;
+	background: none;
 	color: transparent;
 	box-shadow: none;
+	text-shadow: none;
 }
 
 .piece[class*="slide"] {

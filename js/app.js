@@ -21,6 +21,9 @@
 			let row = 1 + Math.floor(i / app.dimension);
 			piece.dataset.goalRow = row;
 			piece.dataset.goalColumn = (i+1) - (row-1) * app.dimension;
+			piece.style.setProperty('--row', row);
+			piece.style.setProperty('--column', piece.dataset.goalColumn);
+			piece.style.setProperty('--order', Number(i + 1));
 		}
 	}
 
