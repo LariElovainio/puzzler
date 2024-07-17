@@ -10,6 +10,8 @@ body {
 	background: var(--c-bg-page);
 	color: var(--c-text);
 	font-family: system-ui;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 .app-name {
@@ -23,8 +25,8 @@ body {
 	line-height: 1;
 	text-align: center;
 	text-shadow:
-		0 -1px 1px rgba(0,0,0,.15),
-		0 -1px 3px rgba(0,0,0,.025),
+		0 -1px 1px rgba(0, 0, 0, .15),
+		0 -1px 3px rgba(0, 0, 0, .025),
 		0 1px 2px #fff6;
 	-webkit-user-select: none;
 	user-select: none;
@@ -32,7 +34,7 @@ body {
 
 .board {
 	--size: 4;
-	--total-count: calc( var(--size) * var(--size) );
+	--total-count: calc(var(--size) * var(--size));
 	--gap: .0625em;
 	align-content: center;
 	aspect-ratio: 1 / 1;
@@ -78,7 +80,7 @@ body {
 	padding: 0;
 	text-align: center;
 	text-shadow: 0 1px 1px #fffc,
-				0 -1px 1px #0004;
+		0 -1px 1px #0004;
 }
 
 .img-bg {
@@ -87,10 +89,10 @@ body {
 }
 
 .img-bg .piece {
-	--img-y: calc( 100% / var(--size) * var(--y-m) + ( var(--y-m) - 1 ) * var(--gap) );
-	--img-x: calc( 100% / var(--size) * var(--x-m) + ( var(--x-m) - 1 ) * var(--gap) );
+	--img-y: calc(100% / var(--size) * var(--y-m) + (var(--y-m) - 1) * var(--gap));
+	--img-x: calc(100% / var(--size) * var(--x-m) + (var(--x-m) - 1) * var(--gap));
 	background-image: var(--bg-image);
-	background-size: calc( var(--size) * 100% + ( var(--size) - 1 ) * var(--gap) );
+	background-size: calc(var(--size) * 100% + (var(--size) - 1) * var(--gap));
 	background-position-x: var(--img-x);
 	background-position-y: var(--img-y);
 }
@@ -139,8 +141,8 @@ body {
 }
 
 .color-bg.rainbow .piece {
-	--hue: calc( var(--order) / var(--total-count) * 360 );
-	--bg-color: oklch( 75% .25 var(--hue));
+	--hue: calc(var(--order) / var(--total-count) * 360);
+	--bg-color: oklch(75% .25 var(--hue));
 }
 
 .piece.empty {
@@ -155,17 +157,17 @@ body {
 }
 
 .slide-up {
-	transform: translateY( -105% );
+	transform: translateY(-105%);
 }
 
 .slide-down {
-	transform: translateY( 105%);
+	transform: translateY(105%);
 }
 
 .slide-left {
-	transform: translateX( -105% );
+	transform: translateX(-105%);
 }
 
 .slide-right {
-	transform: translateX( 105% );
+	transform: translateX(105%);
 }
